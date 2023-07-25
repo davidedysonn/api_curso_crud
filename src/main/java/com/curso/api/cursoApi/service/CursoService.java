@@ -1,4 +1,4 @@
-package com.curso.api.cursoApi.serviciesImpl.service;
+package com.curso.api.cursoApi.service;
 
 import java.util.List;
 

@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.api.cursoApi.dto.AlunoDto;
 import com.curso.api.cursoApi.repositories.AlunoRepository;
-import com.curso.api.cursoApi.serviciesImpl.service.AlunoService;
-import com.curso.api.cursoApi.serviciesImpl.service.CursoService;
+import com.curso.api.cursoApi.service.AlunoService;
+import com.curso.api.cursoApi.service.CursoService;
 
 @RestController
 @RequestMapping("/api/aluno")

@@ -1,4 +1,4 @@
-package com.curso.api.cursoApi.serviciesImpl;
+package com.curso.api.cursoApi.service.serviciesImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,10 +10,10 @@ import com.curso.api.cursoApi.dto.AlunoDto;
 import com.curso.api.cursoApi.entities.Aluno;
 import com.curso.api.cursoApi.repositories.AlunoRepository;
 import com.curso.api.cursoApi.repositories.CursoRepository;
-import com.curso.api.cursoApi.serviciesImpl.service.AlunoService;
-import com.curso.api.cursoApi.serviciesImpl.service.CursoService;
-import com.curso.api.cursoApi.serviciesImpl.service.mapper.AlunoMapper;
-import com.curso.api.cursoApi.serviciesImpl.service.mapper.CursoMapper;
+import com.curso.api.cursoApi.service.AlunoService;
+import com.curso.api.cursoApi.service.CursoService;
+import com.curso.api.cursoApi.service.mapper.AlunoMapper;
+import com.curso.api.cursoApi.service.mapper.CursoMapper;
 
 @Service
 public class AlunoServiceImpl implements AlunoService {

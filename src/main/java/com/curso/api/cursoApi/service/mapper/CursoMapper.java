@@ -1,4 +1,4 @@
-package com.curso.api.cursoApi.serviciesImpl.service.mapper;
+package com.curso.api.cursoApi.service.mapper;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

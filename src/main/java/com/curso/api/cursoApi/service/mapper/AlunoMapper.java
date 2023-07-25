@@ -1,4 +1,4 @@
-package com.curso.api.cursoApi.serviciesImpl.service.mapper;
+package com.curso.api.cursoApi.service.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.curso.api.cursoApi.dto.AlunoDto;
-import com.curso.api.cursoApi.dto.CursoDto;
 import com.curso.api.cursoApi.entities.Aluno;
-import com.curso.api.cursoApi.entities.Curso;
 
 @Service
 public class AlunoMapper {

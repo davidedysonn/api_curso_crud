@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.curso.api.cursoApi.dto.AlunoDto;
 import com.curso.api.cursoApi.dto.CursoDto;
-import com.curso.api.cursoApi.serviciesImpl.service.AlunoService;
-import com.curso.api.cursoApi.serviciesImpl.service.CursoService;
+import com.curso.api.cursoApi.service.AlunoService;
+import com.curso.api.cursoApi.service.CursoService;
 
 @RestController
 @RequestMapping("/api/curso")

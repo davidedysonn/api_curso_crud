@@ -1,4 +1,4 @@
-package com.curso.api.cursoApi.serviciesImpl;
+package com.curso.api.cursoApi.service.serviciesImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import com.curso.api.cursoApi.dto.CursoDto;
 import com.curso.api.cursoApi.entities.Curso;
 import com.curso.api.cursoApi.repositories.CursoRepository;
-import com.curso.api.cursoApi.serviciesImpl.service.CursoService;
-import com.curso.api.cursoApi.serviciesImpl.service.mapper.CursoMapper;
+import com.curso.api.cursoApi.service.CursoService;
+import com.curso.api.cursoApi.service.mapper.CursoMapper;
 
 @Service
 public class CursoServiceImpl implements CursoService {
