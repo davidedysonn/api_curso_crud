@@ -1,23 +1,17 @@
 package com.curso.api.cursoApi.dto;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class AlunoDto {
 
 	private Long id;
 	private String nomeAluno;
 	private LocalDate dataCadastro;
-	private CursoDto cursoDto;
+	private List<CursoDto> cursoDto;
 	
 	public AlunoDto() {
 		
-	}
-
-	public AlunoDto(Long id, String nomeAluno, LocalDate dataCadastro, CursoDto cursoDto) {
-		this.id = id;
-		this.nomeAluno = nomeAluno;
-		this.dataCadastro = dataCadastro;
-		this.cursoDto = cursoDto;
 	}
 
 	public Long getId() {
@@ -44,12 +38,11 @@ public class AlunoDto {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public CursoDto getCursoDto() {
+	public List<CursoDto> getCursoDto() {
 		return cursoDto;
 	}
 
-	public void setCursoDto(CursoDto cursoDto) {
+	public void setCursoDto(List<CursoDto> cursoDto) {
 		this.cursoDto = cursoDto;
 	}
-
 }
