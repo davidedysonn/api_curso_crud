@@ -4,6 +4,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import com.curso.api.cursoApi.repositories.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,6 +31,7 @@ public class CursoController {
 	@Autowired
 	private AlunoService alunoService;
 
+
 	@PostMapping("/adc-curso")
 	public ResponseEntity<CursoDto> adcCurso(@RequestBody CursoDto cursoDto) throws URISyntaxException {
 		CursoDto respostaCursoDto = cursoService.salvarCursoDto(cursoDto);
@@ -44,9 +46,10 @@ public class CursoController {
 		return ResponseEntity.ok().body(respostaAtualizarNomeCurso);
 	}
 
-	@DeleteMapping("/deteltarCursoPeloId/{id}")
+	@DeleteMapping("/deletarCursoPeloId/{id}")
 	public ResponseEntity<String> deteltarPeloId(@PathVariable Long id) {
 		cursoService.deletarCursoById(id);
+
 		return ResponseEntity.noContent().build();
 	}
 

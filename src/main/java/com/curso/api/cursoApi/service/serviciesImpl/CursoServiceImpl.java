@@ -1,8 +1,11 @@
 package com.curso.api.cursoApi.service.serviciesImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.curso.api.cursoApi.entities.Aluno;
+import com.curso.api.cursoApi.repositories.AlunoRepository;
 import org.springframework.stereotype.Service;
 
 import com.curso.api.cursoApi.dto.CursoDto;
@@ -18,9 +21,12 @@ public class CursoServiceImpl implements CursoService {
 
 	private CursoMapper cursoMapper;
 
-	public CursoServiceImpl(CursoRepository cursoRepository, CursoMapper cursoMapper) {
+	private AlunoRepository alunoRepository;
+
+	public CursoServiceImpl(CursoRepository cursoRepository, CursoMapper cursoMapper, AlunoRepository alunoRepository) {
 		this.cursoRepository = cursoRepository;
 		this.cursoMapper = cursoMapper;
+		this.alunoRepository = alunoRepository;
 	}
 
 	@Override
@@ -43,7 +49,23 @@ public class CursoServiceImpl implements CursoService {
 
 	@Override
 	public void deletarCursoById(Long id) {
-		cursoRepository.deleteById(id);
+		Optional<Curso> respostaCurso = cursoRepository.findById(id);
+		if(respostaCurso.isPresent()){
+			if(!respostaCurso.get().getAlunosList().isEmpty()){
+				respostaCurso
+						.get()
+						.getAlunosList()
+						.stream()
+						.forEach(aluno-> alunoRepository.deleteById(aluno.getId()));
+				cursoRepository.deleteById(id);
+			} else {
+				cursoRepository.deleteById(
+						id
+				);
+			}
+
+		}
+
 	}
 
 	@Override

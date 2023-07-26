@@ -26,7 +26,7 @@ public class Curso implements Serializable {
 	private LocalDate dataInicio;
 	private LocalDate dataFim;
 
-	@OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "curso")
 	private List<Aluno> alunosList = new ArrayList<>();
 
 	public Curso() {
@@ -70,6 +70,14 @@ public class Curso implements Serializable {
 
 	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
+	}
+
+	public List<Aluno> getAlunosList() {
+		return alunosList;
+	}
+
+	public void setAlunosList(List<Aluno> alunosList) {
+		this.alunosList = alunosList;
 	}
 
 	@Override

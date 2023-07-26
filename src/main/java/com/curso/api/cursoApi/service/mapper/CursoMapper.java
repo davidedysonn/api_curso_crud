@@ -38,8 +38,8 @@ public class CursoMapper {
 	
 	public List<CursoDto> convertListCursoToDto(List<Curso> listCurso) {
 		List<CursoDto> listCursoDto = new ArrayList<>();
-		listCurso.stream().forEach(Curso -> {
-			listCursoDto.add(convertCursoToDto(Curso));
+		listCurso.stream().forEach(curso -> {
+			listCursoDto.add(convertCursoToDto(curso));
 		});
 		return listCursoDto;
 
@@ -47,8 +47,8 @@ public class CursoMapper {
 	
 	public List<Curso> convertListCursoDtoToEntity(List<CursoDto> listCursoDto) {
 		List<Curso> listCurso = new ArrayList<>();
-		listCursoDto.stream().forEach(CursoDto -> {
-			listCurso.add(converterCursoToEntity(CursoDto));
+		listCursoDto.stream().forEach(cursoDto -> {
+			listCurso.add(converterCursoToEntity(cursoDto));
 		});
 		return listCurso;
 
