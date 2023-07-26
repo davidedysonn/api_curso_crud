@@ -7,14 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Curso implements Serializable {
@@ -26,7 +19,7 @@ public class Curso implements Serializable {
 	private LocalDate dataInicio;
 	private LocalDate dataFim;
 
-	@OneToMany(mappedBy = "curso")
+	@ManyToMany(mappedBy = "cursos")
 	private List<Aluno> alunosList = new ArrayList<>();
 
 	public Curso() {
