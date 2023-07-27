@@ -1,9 +1,11 @@
 package com.curso.api.cursoApi.service.mapper;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.curso.api.cursoApi.dto.AlunoDto;
+import com.curso.api.cursoApi.entities.Aluno;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.curso.api.cursoApi.dto.CursoDto;
@@ -11,8 +13,10 @@ import com.curso.api.cursoApi.entities.Curso;
 
 @Service
 public class CursoMapper {
-	
-	
+	@Autowired
+	private AlunoDto alunoDto;
+	@Autowired
+	private Aluno alunos;
 	public CursoDto convertCursoToDto (Curso curso) {
 		
 		CursoDto respostaCursoDto = new CursoDto();
@@ -20,6 +24,7 @@ public class CursoMapper {
 		respostaCursoDto.setNomeCurso(curso.getNomeCurso());
 		respostaCursoDto.setDataInicio(curso.getDataInicio());
 		respostaCursoDto.setDataFim(curso.getDataFim());
+		respostaCursoDto.setAlunosListDto(curso.getAlunos());
 		
 		return respostaCursoDto;
 		
@@ -32,6 +37,7 @@ public class CursoMapper {
 		respostaCurso.setNomeCurso(cursoDto.getNomeCurso());
 		respostaCurso.setDataInicio(cursoDto.getDataInicio());
 		respostaCurso.setDataFim(cursoDto.getDataFim());
+		respostaCurso.setAlunos(cursoDto.getAlunosListDto());
 		
 		return respostaCurso;
 	}

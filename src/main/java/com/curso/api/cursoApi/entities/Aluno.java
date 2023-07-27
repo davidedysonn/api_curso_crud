@@ -2,6 +2,7 @@ package com.curso.api.cursoApi.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,13 +18,14 @@ public class Aluno implements Serializable {
     private Long id;
     private String nomeAluno;
     private LocalDate dataCadastro;
-    @ManyToMany
+
     @JoinTable(name = "REF_ALUNOS_CURSOS",
             joinColumns = @JoinColumn(name = "alunos_id"),
             inverseJoinColumns = @JoinColumn(name = "cursos_id")
 
     )
-    private List<Curso> cursos;
+    @ManyToMany
+    private List<Curso> cursos = new ArrayList<>();
 
     public Aluno() {
 

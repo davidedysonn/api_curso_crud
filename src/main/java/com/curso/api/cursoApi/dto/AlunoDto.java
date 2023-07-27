@@ -1,6 +1,7 @@
 package com.curso.api.cursoApi.dto;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlunoDto {
@@ -8,10 +9,17 @@ public class AlunoDto {
 	private Long id;
 	private String nomeAluno;
 	private LocalDate dataCadastro;
-	private List<CursoDto> cursoDto;
+	private List<CursoDto> cursoDto = new ArrayList<>();
 	
 	public AlunoDto() {
 		
+	}
+
+	public AlunoDto(Long id, String nomeAluno, LocalDate dataCadastro, List<CursoDto> cursoDto) {
+		this.id = id;
+		this.nomeAluno = nomeAluno;
+		this.dataCadastro = dataCadastro;
+		this.cursoDto = cursoDto;
 	}
 
 	public Long getId() {

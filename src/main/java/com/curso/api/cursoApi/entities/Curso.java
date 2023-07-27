@@ -20,17 +20,18 @@ public class Curso implements Serializable {
 	private LocalDate dataFim;
 
 	@ManyToMany(mappedBy = "cursos")
-	private List<Aluno> alunosList = new ArrayList<>();
+	private List<Aluno> alunos = new ArrayList<>();
 
 	public Curso() {
 
 	}
 
-	public Curso(Long id, String nomeCurso, LocalDate dataInicio, LocalDate dataFim) {
+	public Curso(Long id, String nomeCurso, LocalDate dataInicio, LocalDate dataFim, List<Aluno> alunos) {
 		this.id = id;
 		this.nomeCurso = nomeCurso;
 		this.dataInicio = dataInicio;
 		this.dataFim = dataFim;
+		this.alunos = alunos;
 	}
 
 	public Long getId() {
@@ -65,12 +66,20 @@ public class Curso implements Serializable {
 		this.dataFim = dataFim;
 	}
 
-	public List<Aluno> getAlunosList() {
-		return alunosList;
+	public List<Aluno> getAlunos() {
+		return alunos;
 	}
 
-	public void setAlunosList(List<Aluno> alunosList) {
-		this.alunosList = alunosList;
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Curso curso = (Curso) o;
+		return Objects.equals(id, curso.id);
 	}
 
 	@Override
@@ -79,15 +88,13 @@ public class Curso implements Serializable {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Curso other = (Curso) obj;
-		return Objects.equals(id, other.id);
+	public String toString() {
+		return "Curso{" +
+				"id=" + id +
+				", nomeCurso='" + nomeCurso + '\'' +
+				", dataInicio=" + dataInicio +
+				", dataFim=" + dataFim +
+				", alunos=" + alunos +
+				'}';
 	}
-
 }
